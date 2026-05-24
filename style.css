@@ -1,0 +1,358 @@
+/* ========================================
+   HEADER
+======================================== */
+
+header{
+    width:100%;
+    position:fixed;
+    top:20px;
+    left:0;
+    z-index:999;
+
+    display:flex;
+    justify-content:center;
+}
+
+.navbar{
+    width:92%;
+    max-width:1400px;
+    height:90px;
+
+    background:#171717;
+    border-radius:60px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:0;
+}
+
+/* CENTER THE WHOLE NAV */
+
+.nav-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    width:100%;
+}
+
+/* TEXT */
+
+.nav-links a{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ffffff;
+
+    padding:12px 24px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    text-align:center;
+
+    transition:.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+
+    background:#14b0ff;
+
+    transform:translateY(-2px);
+}
+
+/* REMOVE OLD FIGMA POSITIONING */
+
+.home,
+.projects,
+.resume,
+.contact,
+.rectangle-13,
+.rectangle-14,
+.ellipse-16,
+.dj-logo-1{
+
+    all:unset;
+}
+.frame-334,
+.frame-334 * {
+  box-sizing: border-box;
+}
+.frame-334 {
+  background: #ffffff;
+  height: 1099px;
+  position: relative;
+  overflow: hidden;
+}
+.landing-page {
+  position: absolute;
+  inset: 0;
+}
+.rectangle-15 {
+  background: #ffffff;
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.header {
+  width: 1443px;
+  height: 104px;
+  position: static;
+
+  
+}
+.rectangle-13 {
+  background: #171717;
+  border-radius: 61px;
+  width: 1443px;
+  height: 104px;
+  position: absolute;
+  left: 238px;
+  top: 60px;
+}
+.rectangle-14 {
+  background: #14b1ff;
+  border-radius: 30px;
+  width: 176px;
+  height: 60px;
+  position: absolute;
+  left: 313px;
+  top: 82px;
+}
+.home {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  position: absolute;
+  left: 354px;
+  top: 96px;
+}
+.projects {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  position: absolute;
+  left: 528px;
+  top: 96px;
+}
+.resume {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  position: absolute;
+  left: 1230px;
+  top: 96px;
+  width: 129px;
+  height: 32px;
+}
+.contact {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  position: absolute;
+  left: 1438px;
+  top: 96px;
+  width: 129px;
+  height: 32px;
+}
+.mask-group {
+  width: 1920px;
+  height: 1099px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.i-m-deej-multimedia-designer {
+  text-align: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 95.56634521484375px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  position: absolute;
+  left: 315px;
+  top: 265px;
+  width: 1317px;
+  height: 128px;
+}
+.i-m-deej-multimedia-designer-span {
+  color: var(--gray-900, #171717);
+}
+.i-m-deej-multimedia-designer-span2 {
+  color: #14b0ff;
+}
+.ai-enhancer-dsc-02733-1 {
+  width: 636px;
+  height: 710px;
+  position: absolute;
+  left: 672px;
+  top: 389px;
+  object-fit: cover;
+  aspect-ratio: 636/710;
+}
+.hello {
+  width: 167px;
+  height: 38.86px;
+  position: static;
+}
+.rectangle-16 {
+  background: rgba(217, 217, 217, 0);
+  border-radius: 29.5px;
+  border-style: solid;
+  border-color: #14b0ff;
+  border-width: 2px;
+  width: 167px;
+  height: 38.34px;
+  position: absolute;
+  left: 885px;
+  top: 204.33px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.hello2 {
+  color: #000000;
+  text-align: center;
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  position: absolute;
+  left: 938.28px;
+  top: 212px;
+  width: 66.28px;
+  height: 31.19px;
+}
+.bottom {
+  width: 296px;
+  height: 47px;
+  position: static;
+}
+.rectangle-17 {
+  background: rgba(217, 217, 217, 0.2);
+  border-radius: 33.5px;
+  width: 296px;
+  height: 47px;
+  position: absolute;
+  left: 842px;
+  top: 1014px;
+}
+.rectangle-18 {
+  background: #14b0ff;
+  border-radius: 24.5px;
+  width: 151px;
+  height: 35px;
+  position: absolute;
+  left: 851px;
+  top: 1021px;
+}
+.group-1 {
+  width: 151.22px;
+  height: 45.22px;
+  position: static;
+}
+.portfolio {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  position: absolute;
+  left: 851px;
+  top: 1027px;
+  width: 131px;
+  height: 29px;
+}
+._1053750-200-1 {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 957px;
+  top: 1036.78px;
+  transform-origin: 0 0;
+  transform: rotate(-42.897deg) scale(1, 1);
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+.group-2 {
+  width: 131px;
+  height: 29px;
+  position: static;
+}
+.hire-me {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  font-weight: 300;
+  position: absolute;
+  left: 1005px;
+  top: 1026px;
+  width: 131px;
+  height: 29px;
+}
+.group-12 {
+  width: 72px;
+  height: 72px;
+  position: static;
+}
+.ellipse-16 {
+  background: #ffffff;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  left: 797px;
+  top: 76px;
+}
+.dj-logo-1 {
+  width: 48px;
+  height: 57px;
+  position: absolute;
+  left: 809px;
+  top: 84px;
+  object-fit: cover;
+  aspect-ratio: 48/57;
+}
