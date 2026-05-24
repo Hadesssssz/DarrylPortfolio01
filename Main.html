@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deej Portfolio</title>
+
+<link rel="icon" type="image/png" href="dj-logo-10.png">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  text-decoration:none;
+  list-style:none;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  overflow-x:hidden;
+  color:#171717;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button{
+  cursor:pointer;
+  border:none;
+  outline:none;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+.container{
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+  padding:0 40px;
+}
+
+section{
+  width:100%;
+  position:relative;
+}
+
+/* ========================================
+   FADE ANIMATION
+======================================== */
+
+.fade-in{
+  opacity:0;
+  transform:translateY(50px);
+  transition:
+  opacity 1s ease,
+  transform 1s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ========================================
+   FLOATING IMAGE
+======================================== */
+
+.float{
+  animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+header{
+  width:100%;
+  position:fixed;
+  top:20px;
+  left:0;
+  z-index:999;
+  display:flex;
+  justify-content:center;
+}
+
+.navbar{
+  width:92%;
+  max-width:1400px;
+  height:90px;
+  background:#171717;
+  border-radius:60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  backdrop-filter:blur(10px);
+}
+
+.logo-wrapper{
+  width:70px;
+  height:70px;
+  background:#ffffff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.logo-wrapper img{
+  width:45px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.nav-links a{
+  color:#ffffff;
+  padding:12px 24px;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:500;
+  transition:0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:#14b0ff;
+  transform:translateY(-2px);
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:140px;
+  overflow:hidden;
+}
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.hello{
+  width:170px;
+  height:45px;
+  border:2px solid #14b0ff;
+  border-radius:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:25px;
+  font-size:20px;
+  font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.hero-text h1{
+  font-size:80px;
+  line-height:1.1;
+  font-weight:700;
+}
+
+.hero-text span{
+  color:#14b0ff;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:20px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.primary-btn{
+  width:180px;
+  height:58px;
+  background:#14b0ff;
+  color:#ffffff;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:600;
+  transition:0.3s ease;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.secondary-btn{
+  width:180px;
+  height:58px;
+  background:#171717;
+  color:#ffffff;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:500;
+  transition:0.3s ease;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:550px;
+  object-fit:cover;
+}
+
+/* ========================================
+   SECTIONS
+======================================== */
+
+.projects-section,
+.resume-section,
+.experience-section{
+  padding:100px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:55px;
+  font-weight:700;
+  margin-bottom:70px;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.project-card{
+  background:#ffffff;
+  border-radius:30px;
+  padding:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:0.4s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+}
+
+.project-card h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.project-card p{
+  color:#555555;
+  line-height:1.7;
+}
+
+/* ========================================
+   EXPERIENCE SECTION
+======================================== */
+
+.experience-section{
+  padding:90px 0 70px;
+}
+
+.experience-title{
+  text-align:center;
+  font-size:58px;
+  font-weight:700;
+  margin-bottom:60px;
+}
+
+.experience-title span{
+  color:#14b0ff;
+}
+
+.timeline{
+  position:relative;
+  max-width:1100px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:3px;
+  height:100%;
+  background:
+  linear-gradient(
+    to bottom,
+    #14b0ff,
+    #8edcff
+  );
+  border-radius:20px;
+  opacity:0.4;
+}
+
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:10px 35px;
+  margin-bottom:25px;
+}
+
+.timeline-item.left{
+  left:0;
+  text-align:right;
+}
+
+.timeline-item.right{
+  left:50%;
+  text-align:left;
+}
+
+.timeline-dot{
+  position:absolute;
+  top:45px;
+  width:22px;
+  height:22px;
+  background:#14b0ff;
+  border-radius:50%;
+  border:5px solid #ffffff;
+  box-shadow:
+  0 0 0 6px rgba(20,176,255,0.18),
+  0 0 25px rgba(20,176,255,0.5);
+  z-index:2;
+  transition:0.4s ease;
+}
+
+.timeline-item.left .timeline-dot{
+  right:-11px;
+}
+
+.timeline-item.right .timeline-dot{
+  left:-11px;
+}
+
+.timeline-content{
+  background:#ffffff;
+  padding:24px;
+  border-radius:26px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.4s ease;
+  position:relative;
+  overflow:hidden;
+  transform-style:preserve-3d;
+}
+
+.timeline-content::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(
+    135deg,
+    rgba(20,176,255,0.08),
+    transparent
+  );
+  opacity:0;
+  transition:0.4s ease;
+}
+
+.timeline-content:hover::before{
+  opacity:1;
+}
+
+.timeline-content:hover{
+  transform:
+  translateY(-8px)
+  scale(1.02);
+  box-shadow:
+  0 20px 45px rgba(0,0,0,0.12);
+}
+
+.timeline-item:hover .timeline-dot{
+  transform:scale(1.25);
+}
+
+.timeline-content h3{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.timeline-content h4{
+  font-size:18px;
+  color:#14b0ff;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.timeline-content p{
+  color:#666;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* ========================================
+   RESUME SECTION
+======================================== */
+
+.resume-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.resume-left{
+  flex:1;
+  min-width:320px;
+}
+
+.resume-left h3{
+  font-size:60px;
+  line-height:1.1;
+  margin-bottom:25px;
+}
+
+.resume-left h3 span{
+  color:#14b0ff;
+}
+
+.resume-left p{
+  font-size:20px;
+  line-height:1.9;
+  color:#555555;
+  margin-bottom:40px;
+}
+
+.stats-box{
+  width:220px;
+  height:220px;
+  border-radius:40px;
+  background:#14b0ff;
+  color:#ffffff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.stats-box h4{
+  font-size:70px;
+  line-height:1;
+}
+
+.stats-box span{
+  font-size:20px;
+  text-align:center;
+  margin-top:10px;
+}
+
+.resume-buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.cv-btn{
+  width:220px;
+  height:60px;
+  background:#171717;
+  color:#ffffff;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:500;
+  transition:0.3s ease;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.cv-btn:hover{
+  transform:translateY(-4px);
+}
+
+.resume-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.resume-right img{
+  width:100%;
+  max-width:500px;
+  border-radius:40px;
+  object-fit:cover;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.contact-section{
+  background:#3c3c3c;
+  border-radius:120px 120px 0 0;
+  padding:120px 0 60px;
+  color:#ffffff;
+}
+
+.contact-top{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+  flex-wrap:wrap;
+  margin-bottom:80px;
+}
+
+.contact-left h2{
+  font-size:60px;
+  margin-bottom:30px;
+}
+
+.contact-left p{
+  font-size:20px;
+  line-height:1.8;
+}
+
+.contact-number{
+  display:inline-block;
+  margin-top:25px;
+  color:#ffffff;
+  font-size:24px;
+  font-weight:500;
+  transition:0.3s ease;
+}
+
+.contact-number:hover{
+  color:#14b0ff;
+  transform:translateY(-3px) scale(1.03);
+}
+
+.socials{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.socials a img{
+  width:85px;
+  transition:0.3s ease;
+}
+
+.socials a img:hover{
+  transform:scale(1.12);
+}
+
+.footer-line{
+  width:100%;
+  height:1px;
+  background:#ffffff40;
+  margin:40px 0;
+}
+
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  font-size:15px;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .container{
+    padding:0 20px;
+  }
+
+  .navbar{
+    height:auto;
+    padding:18px 20px;
+    border-radius:30px;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .hero{
+    padding-top:220px;
+  }
+
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text h1{
+    font-size:42px;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .section-title,
+  .experience-title{
+    font-size:40px;
+  }
+
+  .timeline::before{
+    left:18px;
+  }
+
+  .timeline-item{
+    width:100%;
+    padding-left:60px;
+    padding-right:0;
+    text-align:left !important;
+    left:0 !important;
+  }
+
+  .timeline-dot{
+    left:7px !important;
+    top:38px;
+  }
+
+  .resume-wrapper{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .resume-buttons{
+    justify-content:center;
+  }
+
+  .contact-section{
+    border-radius:60px 60px 0 0;
+  }
+
+  .footer-bottom{
+    justify-content:center;
+    text-align:center;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <nav class="navbar fade-in">
+
+    <div class="nav-links">
+
+      <a href="#home" class="nav-link active">Home</a>
+
+      <a href="#projects" class="nav-link">My Services</a>
+
+      <a href="#experience" class="nav-link">Experience</a>
+
+      <a href="#resume" class="nav-link">Resume</a>
+
+      <a href="#contact" class="nav-link">Contact</a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="hero-text fade-in">
+
+        <div class="hello">
+          Hello!
+        </div>
+
+        <h1>
+          I’m <span>Deej</span>,<br>
+          Multimedia Designer
+        </h1>
+
+        <div class="hero-buttons">
+
+          <!-- PORTFOLIO BUTTON -->
+          <a
+            href="https://www.behance.net/darryljohn1"
+            target="_blank"
+            class="primary-btn"
+          >
+            Portfolio
+          </a>
+
+          <!-- HIRE ME BUTTON -->
+          <a
+            href="#contact"
+            class="secondary-btn"
+          >
+            Hire Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image fade-in">
+
+        <img
+          src="ai-enhancer-dsc-02733-10.png"
+          class="float"
+          alt=""
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="projects-section" id="projects">
+
+  <div class="container">
+
+    <h2 class="section-title fade-in">
+      My Services
+    </h2>
+
+    <div class="projects-grid">
+
+      <div class="project-card fade-in">
+
+        <h3>Branding Design</h3>
+
+        <p>
+          Creative branding and visual identity projects with modern and engaging concepts.
+        </p>
+
+      </div>
+
+      <div class="project-card fade-in">
+
+        <h3>Video Editing</h3>
+
+        <p>
+          Cinematic and social media focused video editing with storytelling techniques.
+        </p>
+
+      </div>
+
+      <div class="project-card fade-in">
+
+        <h3>UI / UX Design</h3>
+
+        <p>
+          Clean and responsive user interface concepts optimized for all devices.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="experience-section" id="experience">
+
+  <div class="container">
+
+    <h2 class="experience-title fade-in">
+      My <span>Work Experience</span>
+    </h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item left fade-in">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>Multimedia Designer</h3>
+          <h4>Bellek & Co</h4>
+          <p>Mandaluyong City, Philippines</p>
+          <p>March 2026 - Present</p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item right fade-in">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>Multimedia Designer</h3>
+          <h4>Biocostech Philippines Corporation</h4>
+          <p>Mandaluyong City, Philippines</p>
+          <p>September 22, 2024 - Present</p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item left fade-in">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>Graphic Designer</h3>
+          <h4>Avisha Printing Shop</h4>
+          <p>Alicia, Isabela, Philippines</p>
+          <p>September 01, 2026 - September 10, 2026</p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item right fade-in">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>Video Editor / Graphic Designer</h3>
+          <h4>Local Government Unit - San Isidro, Isabela</h4>
+          <p>San Isidro, Isabela, Philippines</p>
+          <p>2021 - 2023</p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item left fade-in">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>Freelance Graphic Designer</h3>
+          <h4>JCGM Printing Shop</h4>
+          <p>San Isidro, Isabela, Philippines</p>
+          <p>2019 - 2024</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="resume-section" id="resume">
+
+  <div class="container">
+
+    <div class="project-card fade-in">
+
+      <div class="resume-wrapper">
+
+        <div class="resume-left fade-in">
+
+          <h3>
+            Why <span>Hire me</span>?
+          </h3>
+
+          <div class="stats-box">
+
+            <h4>100+</h4>
+
+            <span>
+              Projects Completed
+            </span>
+
+          </div>
+
+          <p>
+            I’m creative, adaptable, and committed to delivering quality work on time.
+            With experience in content creation, video editing, and e-commerce projects,
+            I create engaging content that supports business goals while working efficiently with clients and teams.
+          </p>
+
+          <div class="resume-buttons">
+
+            <!-- DOWNLOAD CV -->
+            <a
+              href="DAGANGCV2026.pdf"
+              download="DAGANGCV2026.pdf"
+              class="cv-btn"
+            >
+              Download CV
+            </a>
+
+            <!-- PORTFOLIO -->
+            <a
+              href="https://www.behance.net/darryljohn1"
+              target="_blank"
+              class="primary-btn"
+            >
+              Portfolio
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="resume-right fade-in">
+
+          <img
+            src="_9-a-0450-b-1-41-a-0-4-b-13-b-2-be-8-c-6277380-cb-8-10.png"
+            alt=""
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="contact-section" id="contact">
+
+  <div class="container">
+
+    <div class="contact-top">
+
+      <div class="contact-left fade-in">
+
+        <h2>
+          Let’s Connect
+        </h2>
+
+        <p>
+          Darryl John S. Dagang<br>
+          Multimedia Designer
+        </p>
+
+        <a
+          href="tel:+639563947833"
+          class="contact-number"
+        >
+          Contact Number : 09563947833
+        </a>
+
+        <br><br>
+
+        <p>
+          Address : Mandaluyong City, Philippines
+        </p>
+
+      </div>
+
+      <div class="contact-right fade-in">
+
+        <p
+          style="
+          margin-bottom:25px;
+          font-size:22px;
+          font-weight:600;
+          text-align:center;
+          "
+        >
+          Click to view my socials
+        </p>
+
+        <div class="socials">
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=darryljohndagang@gmail.com"
+            target="_blank"
+          >
+            <img src="email-20.png" alt="Gmail">
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/darryl-john-811269289"
+            target="_blank"
+          >
+            <img src="linkedin-1-10.png" alt="LinkedIn">
+          </a>
+
+          <a
+            href="https://www.instagram.com/dreal.john"
+            target="_blank"
+          >
+            <img src="instagram-10.png" alt="Instagram">
+          </a>
+
+          <a href="tel:09563947833">
+            <img src="untitled-1-10.png" alt="Phone">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-bottom fade-in">
+
+      <div>
+        Copyright © 2026 Darryl John Dagang.
+        All Rights Reserved.
+      </div>
+
+      <div>
+        User Terms & Conditions | Privacy Policy
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+/* ========================================
+   FADE IN
+======================================== */
+
+const fadeElements =
+document.querySelectorAll('.fade-in');
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add('show');
+
+    }
+
+    else{
+
+      entry.target.classList.remove('show');
+
+    }
+
+  });
+
+},{
+  threshold:0.15
+});
+
+fadeElements.forEach((el)=>{
+  observer.observe(el);
+});
+
+/* ========================================
+   ACTIVE NAVIGATION
+======================================== */
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll",()=>{
+
+  let current = "";
+
+  sections.forEach((section)=>{
+
+    const sectionTop =
+    section.offsetTop;
+
+    if(pageYOffset >= sectionTop - 200){
+
+      current =
+      section.getAttribute("id");
+
+    }
+
+  });
+
+  navLinks.forEach((link)=>{
+
+    link.classList.remove("active");
+
+    if(
+      link.getAttribute("href")
+      === `#${current}`
+    ){
+
+      link.classList.add("active");
+
+    }
+
+  });
+
+});
+
+/* ========================================
+   PARALLAX EFFECT
+======================================== */
+
+window.addEventListener("scroll",()=>{
+
+  const image =
+  document.querySelector(".hero-image img");
+
+  const scrollY =
+  window.scrollY;
+
+  image.style.transform =
+  `translateY(${scrollY * 0.08}px)`;
+
+});
+
+/* ========================================
+   TIMELINE INTERACTIVE EFFECT
+======================================== */
+
+const cards =
+document.querySelectorAll('.timeline-content');
+
+cards.forEach((card)=>{
+
+  card.addEventListener('mousemove',(e)=>{
+
+    const rect =
+    card.getBoundingClientRect();
+
+    const x =
+    e.clientX - rect.left;
+
+    const y =
+    e.clientY - rect.top;
+
+    const rotateY =
+    ((x / rect.width) - 0.5) * 10;
+
+    const rotateX =
+    ((y / rect.height) - 0.5) * -10;
+
+    card.style.transform =
+    `
+    perspective(1000px)
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+    translateY(-8px)
+    scale(1.02)
+    `;
+
+  });
+
+  card.addEventListener('mouseleave',()=>{
+
+    card.style.transform =
+    'perspective(1000px) rotateX(0) rotateY(0)';
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
